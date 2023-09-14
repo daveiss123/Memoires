@@ -30,7 +30,7 @@
 
                         <h4>Formulaire d'enregistremant</h4>
 
-                        <form class="register-form" method="post" action="{{ route('inscription') }}">
+                        <form class="register-form" method="get" action="{{ route('inscription') }}">
                         @csrf
 
                         <!-- nom -->

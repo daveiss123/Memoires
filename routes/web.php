@@ -13,7 +13,7 @@ use App\Http\Controllers\InscriptionController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::POST('/inscription', function () {
+Route::GET('/inscription', function () {
     return view('inscription');
 })->name('inscription');
 
@@ -21,13 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/layout', function () {
-//     return view('layout\app');
+// Route::post('/inscription', 'InscriptionController@register')->name('inscription');
 // });
 // Route::get('/login', 'AuthController@showLoginForm')->name('login');
 // Route::post('/login', 'AuthController@login');
 // Route::post('/logout', 'AuthController@logout')->name('logout');
-// Route::get('/inscription', 'InscriptionController@register')->name('inscription');
 // Route::group(['middleware' => 'auth'], function () {
 //     Route::get('/admin/dashboard', 'AdminController@index')->name('admin.dashboard');
 //     Route::get('/admin/memoires', 'MemoireController@index')->name('admin.memoires.index');

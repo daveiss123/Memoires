@@ -6,13 +6,12 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('filieres', function (Blueprint $table) {
             $table->id();
+            $table->string('nom_filiere');
+            $table->foreignId('departement_id')->constrained();
             $table->timestamps();
         });
     }
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('filieres');
+        Schema::table('filieres', function (Blueprint $table) {
+            $table->dropForeign(['departement_id']);
+        });
     }
 };
